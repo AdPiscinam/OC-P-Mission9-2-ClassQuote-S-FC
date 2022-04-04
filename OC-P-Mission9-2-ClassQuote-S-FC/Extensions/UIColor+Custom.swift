@@ -18,6 +18,4 @@ extension UIColor {
     public class var merlotRed: UIColor {
         UIColor(red: 0.50, green: 0.12, blue: 0.13, alpha: 1.00)
     }
-    
-    
 }

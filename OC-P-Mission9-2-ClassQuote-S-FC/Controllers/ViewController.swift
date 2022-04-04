@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         return imageView
     }()
     
+    // UILabel: Quote
     private let quoteLabel: UILabel = {
         let label = UILabel()
         label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
         return label
     }()
     
+    // UILabel: Author
     private let authorLabel: UILabel = {
         let label = UILabel()
         label.text = "Jean L'Auteur"
@@ -45,10 +47,17 @@ class ViewController: UIViewController {
         return label
     }()
     
-    
-    // UILabel: Quote
-    // UILabel: Author
     // UIButton
+    lazy var newQuoteButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setTitle("New Quote", for: .normal)
+        button.backgroundColor = .merlotRed
+        button.setTitleColor(UIColor.init(white: 1, alpha: 0.3), for: .highlighted)
+        button.addTarget(self, action: #selector(getNewQuote), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -66,6 +75,8 @@ extension ViewController {
         view.addSubview(picture)
         picture.addSubview(quoteLabel)
         view.addSubview(authorLabel)
+        view.addSubview(newQuoteButton)
+        
         // UIImageView
         picture.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
         picture.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
@@ -83,6 +94,14 @@ extension ViewController {
         authorLabel.trailingAnchor.constraint(equalTo: picture.trailingAnchor).isActive = true
         
         // UIButton
+        newQuoteButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+        newQuoteButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+        newQuoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+        newQuoteButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
+    }
+    
+    @objc private func getNewQuote() {
+        print("hello")
     }
 }
 

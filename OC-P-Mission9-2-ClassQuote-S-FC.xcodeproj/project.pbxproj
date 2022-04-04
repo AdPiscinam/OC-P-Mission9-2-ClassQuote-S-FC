@@ -14,6 +14,7 @@
 		591C3B7827FAD6B000466D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 591C3B7627FAD6B000466D3E /* LaunchScreen.storyboard */; };
 		591C3B8427FAD89300466D3E /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C3B8327FAD89300466D3E /* UIColor+Custom.swift */; };
 		591C3B8627FAEAE700466D3E /* UIFont+Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C3B8527FAEAE700466D3E /* UIFont+Traits.swift */; };
+		591C3B8927FB09E200466D3E /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C3B8827FB09E200466D3E /* QuoteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		591C3B7927FAD6B000466D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		591C3B8327FAD89300466D3E /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		591C3B8527FAEAE700466D3E /* UIFont+Traits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Traits.swift"; sourceTree = "<group>"; };
+		591C3B8827FB09E200466D3E /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				591C3B7F27FAD7D400466D3E /* App Delegates */,
+				591C3B8727FB09D200466D3E /* Models */,
 				591C3B8127FAD7EA00466D3E /* Controllers */,
 				591C3B8227FAD87400466D3E /* Extensions */,
 				591C3B8027FAD7E000466D3E /* Supporting Files */,
@@ -100,6 +103,14 @@
 				591C3B8527FAEAE700466D3E /* UIFont+Traits.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		591C3B8727FB09D200466D3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				591C3B8827FB09E200466D3E /* QuoteService.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				591C3B6C27FAD6AE00466D3E /* AppDelegate.swift in Sources */,
 				591C3B8627FAEAE700466D3E /* UIFont+Traits.swift in Sources */,
 				591C3B8427FAD89300466D3E /* UIColor+Custom.swift in Sources */,
+				591C3B8927FB09E200466D3E /* QuoteService.swift in Sources */,
 				591C3B6E27FAD6AE00466D3E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

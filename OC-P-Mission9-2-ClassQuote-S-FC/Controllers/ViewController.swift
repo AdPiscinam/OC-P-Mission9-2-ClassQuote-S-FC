@@ -101,7 +101,7 @@ extension ViewController {
     }
     
     @objc private func getNewQuote() {
-        print("hello")
+        QuoteService.getQuote()
     }
 }
 

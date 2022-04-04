@@ -13,6 +13,7 @@
 		591C3B7527FAD6B000466D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 591C3B7427FAD6B000466D3E /* Assets.xcassets */; };
 		591C3B7827FAD6B000466D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 591C3B7627FAD6B000466D3E /* LaunchScreen.storyboard */; };
 		591C3B8427FAD89300466D3E /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C3B8327FAD89300466D3E /* UIColor+Custom.swift */; };
+		591C3B8627FAEAE700466D3E /* UIFont+Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C3B8527FAEAE700466D3E /* UIFont+Traits.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		591C3B7727FAD6B000466D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		591C3B7927FAD6B000466D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		591C3B8327FAD89300466D3E /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
+		591C3B8527FAEAE700466D3E /* UIFont+Traits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Traits.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				591C3B8327FAD89300466D3E /* UIColor+Custom.swift */,
+				591C3B8527FAEAE700466D3E /* UIFont+Traits.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				591C3B7027FAD6AE00466D3E /* ViewController.swift in Sources */,
 				591C3B6C27FAD6AE00466D3E /* AppDelegate.swift in Sources */,
+				591C3B8627FAEAE700466D3E /* UIFont+Traits.swift in Sources */,
 				591C3B8427FAD89300466D3E /* UIColor+Custom.swift in Sources */,
 				591C3B6E27FAD6AE00466D3E /* SceneDelegate.swift in Sources */,
 			);

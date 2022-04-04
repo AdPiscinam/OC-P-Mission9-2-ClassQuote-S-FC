@@ -33,6 +33,18 @@ class ViewController: UIViewController {
         return label
     }()
     
+    private let authorLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Jean L'Auteur"
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        label.textColor = .black
+        label.font = UIFont.italicSystemFont(ofSize: 17)
+        label.addCharacterSpacing(kernValue: 4)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     
     // UILabel: Quote
     // UILabel: Author
@@ -53,7 +65,7 @@ extension ViewController {
         view.backgroundColor = UIColor.backgroundIsabelline
         view.addSubview(picture)
         picture.addSubview(quoteLabel)
-        
+        view.addSubview(authorLabel)
         // UIImageView
         picture.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
         picture.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
@@ -67,6 +79,9 @@ extension ViewController {
         quoteLabel.trailingAnchor.constraint(equalTo: picture.trailingAnchor, constant: -8).isActive = true
       
         // UILabel: Author
+        authorLabel.topAnchor.constraint(equalTo: picture.bottomAnchor, constant: 8).isActive = true
+        authorLabel.trailingAnchor.constraint(equalTo: picture.trailingAnchor).isActive = true
+        
         // UIButton
     }
 }

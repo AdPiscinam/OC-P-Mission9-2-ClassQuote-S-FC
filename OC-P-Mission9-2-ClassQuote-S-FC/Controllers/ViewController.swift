@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     
     private let picture: UIImageView = {
         let imageView = UIImageView()
-      //  let image = UIImage(named: "sunset.jpeg")
-       // imageView.image = image
         imageView.backgroundColor = .textViewGray
         imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false

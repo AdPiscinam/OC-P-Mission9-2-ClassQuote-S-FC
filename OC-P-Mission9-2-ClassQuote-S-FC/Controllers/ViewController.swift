@@ -61,6 +61,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        getNewQuote()
     }
 
 
@@ -101,7 +102,25 @@ extension ViewController {
     }
     
     @objc private func getNewQuote() {
-        QuoteService.getQuote()
+        QuoteService().getQuote { [self] (success, quote) in
+            if success, let quote = quote {
+                update(quote: quote)
+            } else {
+                presentAlert()
+            }
+        }
     }
+    
+    private func update(quote: Quote) {
+        quoteLabel.text = quote.text
+        authorLabel.text = quote.author
+        picture.image = UIImage(data: quote.imageData)
+    }
+    private func presentAlert() {
+        let alertVC = UIAlertController(title: "Error", message: "Please retry downloading.", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
+
 }
 

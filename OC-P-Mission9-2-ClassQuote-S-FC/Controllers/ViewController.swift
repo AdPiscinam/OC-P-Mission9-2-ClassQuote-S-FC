@@ -58,10 +58,19 @@ class ViewController: UIViewController {
         return button
     }()
     
+    //
+    let indicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.color = .merlotRed
+       
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        getNewQuote()
+        firstExecuteSearch()
     }
 
 
@@ -77,6 +86,7 @@ extension ViewController {
         picture.addSubview(quoteLabel)
         view.addSubview(authorLabel)
         view.addSubview(newQuoteButton)
+        view.addSubview(indicator)
         
         // UIImageView
         picture.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
@@ -99,10 +109,19 @@ extension ViewController {
         newQuoteButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
         newQuoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
         newQuoteButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        
+        // UIActivityIndicatorView
+        indicator.centerXAnchor.constraint(equalTo: newQuoteButton.centerXAnchor).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: newQuoteButton.centerYAnchor).isActive = true
     }
     
     @objc private func getNewQuote() {
-        QuoteService().getQuote { [self] (success, quote) in
+        toggleActivityIndicator(shown: true)
+        indicator.startAnimating()
+     
+        QuoteService.shared.getQuote { [self] (success, quote) in
+            toggleActivityIndicator(shown: false)
+          
             if success, let quote = quote {
                 update(quote: quote)
             } else {
@@ -121,6 +140,20 @@ extension ViewController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
-
+    
+    private func toggleActivityIndicator(shown: Bool) {
+        indicator.isHidden = !shown
+        newQuoteButton.isHidden = shown
+    }
+    
+    private func firstExecuteSearch() {
+        QuoteService.shared.getQuote { [self] (success, quote) in
+            if success, let quote = quote {
+                update(quote: quote)
+            } else {
+                presentAlert()
+            }
+        }
+    }
 }
 

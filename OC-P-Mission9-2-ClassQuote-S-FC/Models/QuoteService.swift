@@ -10,6 +10,10 @@ class QuoteService {
     private static let quoteUrl = URL(string: "https://api.forismatic.com/api/1.0/")!
     private static let pictureUrl = URL(string: "https://source.unsplash.com/random/1000x1000")!
     private var task: URLSessionDataTask?
+    static var shared = QuoteService()
+    
+    private init() {}
+    
     
     func getQuote(callback: @escaping (Bool, Quote?) -> Void) {
         // Request
@@ -53,7 +57,6 @@ class QuoteService {
         }
         task?.resume()
     }
-    
     
     private func getImage(completionHandler: @escaping ((Data?) -> Void)) {
         let session = URLSession(configuration: .default)
